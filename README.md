@@ -185,14 +185,6 @@ ecosystem:
    - Thanh tốc độ: Điều chỉnh nhanh/chậm
 4. **Quan sát**: Theo dõi grid và biểu đồ dân số
 
-## 👥 Thành viên nhóm
-
-| Tên | MSSV | Vai trò |
-|-----|------|---------|
-| [Thành viên 1] | [MSSV] | [Vai trò] |
-| [Thành viên 2] | [MSSV] | [Vai trò] |
-| [Thành viên 3] | [MSSV] | [Vai trò] |
-
 ## 📄 License
 
 MIT License - Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
