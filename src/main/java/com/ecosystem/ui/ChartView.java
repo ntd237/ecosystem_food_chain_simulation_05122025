@@ -51,9 +51,14 @@ public class ChartView {
 
         chart.getData().addAll(producerSeries, herbivoreSeries, carnivoreSeries);
 
-        // Style
+        // Style chart background
         chart.setStyle("-fx-background-color: #1a1a2e;");
         chart.lookup(".chart-plot-background").setStyle("-fx-background-color: #16213e;");
+
+        // Áp dụng màu cho các series thông qua CSS
+        // Series 0 = Producer (Green), Series 1 = Herbivore (Blue), Series 2 =
+        // Carnivore (Red)
+        chart.getStylesheets().add(getClass().getResource("/chart-colors.css").toExternalForm());
     }
 
     /**

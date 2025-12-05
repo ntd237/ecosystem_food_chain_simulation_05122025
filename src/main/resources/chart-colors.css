@@ -1,0 +1,46 @@
+/* Chart Colors CSS - Màu khớp với grid view */
+
+/* Producer: Green (xanh lá) */
+.series0.chart-series-line {
+    -fx-stroke: #00ff00;
+    -fx-stroke-width: 2px;
+}
+
+.series0.chart-line-symbol {
+    -fx-background-color: #00ff00, white;
+}
+
+/* Herbivore: Blue (xanh lam) */
+.series1.chart-series-line {
+    -fx-stroke: #0000ff;
+    -fx-stroke-width: 2px;
+}
+
+.series1.chart-line-symbol {
+    -fx-background-color: #0000ff, white;
+}
+
+/* Carnivore: Red (đỏ) */
+.series2.chart-series-line {
+    -fx-stroke: #ff0000;
+    -fx-stroke-width: 2px;
+}
+
+.series2.chart-line-symbol {
+    -fx-background-color: #ff0000, white;
+}
+
+/* Legend symbols - Producer */
+.default-color0.chart-legend-item-symbol {
+    -fx-background-color: #00ff00;
+}
+
+/* Legend symbols - Herbivore */
+.default-color1.chart-legend-item-symbol {
+    -fx-background-color: #0000ff;
+}
+
+/* Legend symbols - Carnivore */
+.default-color2.chart-legend-item-symbol {
+    -fx-background-color: #ff0000;
+}
