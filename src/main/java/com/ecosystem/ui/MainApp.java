@@ -214,7 +214,12 @@ public class MainApp extends Application implements SimulationListener {
 
         Button resetButton = new Button("🔄 Reset");
         resetButton.setStyle(getSecondaryButtonStyle());
-        resetButton.setOnAction(e -> engine.reset());
+        resetButton.setOnAction(e -> {
+            engine.reset();
+            gridView.setEcosystem(engine.getEcosystem());
+            chartView.clear();
+            syncSpeedFromSlider();
+        });
 
         // Speed control
         Label speedLabel = new Label("Tốc độ:");
@@ -309,9 +314,27 @@ public class MainApp extends Application implements SimulationListener {
             engine.pause();
         } else if (state == SimulationState.PAUSED) {
             engine.resume();
+        } else if (state == SimulationState.FINISHED) {
+            // Khi FINISHED, cần reset về trạng thái gốc trước khi chạy lại
+            engine.reset();
+            gridView.setEcosystem(engine.getEcosystem());
+            chartView.clear();
+            syncSpeedFromSlider();
+            engine.start();
         } else {
+            // STOPPED: Chạy lần đầu
+            syncSpeedFromSlider();
             engine.start();
         }
+    }
+
+    /**
+     * Đồng bộ tốc độ từ slider hiện tại sang engine.
+     * Gọi sau khi initialize/reset để đảm bảo speed không bị reset.
+     */
+    private void syncSpeedFromSlider() {
+        int tickMs = (int) (550 - speedSlider.getValue());
+        engine.setTickIntervalMs(tickMs);
     }
 
     private void backToMenu() {
