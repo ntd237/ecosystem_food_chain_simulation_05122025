@@ -54,7 +54,7 @@ Interfaces:
 ## 📁 Cấu trúc dự án
 
 ```
-ecosystem-simulation/
+ecosystem_food_chain_simulation_05122025/
 ├── pom.xml                                 # Maven configuration
 ├── README.md                               # Documentation
 │
@@ -107,8 +107,8 @@ ecosystem-simulation/
 
 ```bash
 # Clone repository
-git clone https://github.com/ntd237/ecosystem-simulation.git
-cd ecosystem-simulation
+git clone https://github.com/ntd237/ecosystem_food_chain_simulation_05122025.git
+cd ecosystem_food_chain_simulation_05122025
 
 # Compile và chạy
 mvn clean javafx:run
