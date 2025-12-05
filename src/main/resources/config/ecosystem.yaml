@@ -1,0 +1,80 @@
+ecosystem:
+  grid:
+    width: 50
+    height: 30
+  
+  energy:
+    # Tỷ lệ chuyển đổi năng lượng (10% rule)
+    transfer_rate: 0.10
+    # Năng lượng Producer nhận từ quang hợp mỗi tick
+    producer_photosynthesis: 5.0
+    # Năng lượng Producer ban đầu
+    producer_initial: 30.0
+    # Năng lượng tối đa của Producer
+    producer_max: 100.0
+    # Năng lượng Herbivore ban đầu
+    herbivore_initial: 50.0
+    # Tốc độ mất năng lượng của Herbivore mỗi tick
+    herbivore_hunger_rate: 2.0
+    # Năng lượng Carnivore ban đầu
+    carnivore_initial: 80.0
+    # Tốc độ mất năng lượng của Carnivore mỗi tick
+    carnivore_hunger_rate: 3.0
+  
+  movement:
+    # Tầm nhìn của Herbivore (số ô)
+    herbivore_vision: 5
+    # Tầm nhìn của Carnivore (số ô)
+    carnivore_vision: 7
+    # Tốc độ di chuyển Herbivore (ô/tick)
+    herbivore_speed: 1
+    # Tốc độ di chuyển Carnivore (ô/tick)
+    carnivore_speed: 2
+  
+  reproduction:
+    # Ngưỡng năng lượng để Producer sinh sản
+    producer_threshold: 80.0
+    # Năng lượng tiêu tốn khi Producer sinh sản
+    producer_cost: 40.0
+    # Ngưỡng năng lượng để Herbivore sinh sản
+    herbivore_threshold: 100.0
+    # Năng lượng tiêu tốn khi Herbivore sinh sản
+    herbivore_cost: 50.0
+    # Ngưỡng năng lượng để Carnivore sinh sản
+    carnivore_threshold: 150.0
+    # Năng lượng tiêu tốn khi Carnivore sinh sản
+    carnivore_cost: 75.0
+    # Xác suất Producer tự động spawn
+    producer_spawn_rate: 0.02
+
+  simulation:
+    # Thời gian mỗi tick (ms)
+    tick_interval_ms: 200
+    # Số thế hệ tối đa
+    max_generations: 10000
+
+# Các kịch bản mô phỏng
+scenarios:
+  # Hệ sinh thái cân bằng
+  balanced:
+    name: "Hệ sinh thái cân bằng"
+    description: "Số lượng các loài được phân bổ hợp lý, tạo sự ổn định"
+    producers: 100
+    herbivores: 30
+    carnivores: 10
+  
+  # Quá tải động vật ăn cỏ
+  overpopulation:
+    name: "Quá tải Herbivore"
+    description: "Số lượng Herbivore quá nhiều, dẫn đến cạn kiệt Producer"
+    producers: 50
+    herbivores: 80
+    carnivores: 5
+  
+  # Nguy cơ tuyệt chủng
+  extinction:
+    name: "Nguy cơ tuyệt chủng"
+    description: "Số lượng Carnivore quá nhiều, đe dọa Herbivore"
+    producers: 30
+    herbivores: 15
+    carnivores: 25
