@@ -16,9 +16,7 @@ import javafx.application.Application;
  * - Polymorphism: update(), move(), findFood(), getColor() được override
  * - Encapsulation: Các thuộc tính được bảo vệ với getter/setter
  * - Abstraction: Interface Movable, Consumable, Reproducible
- * 
- * @author ntd237
- * @version 1.0.0
+ *
  */
 public class Main {
 

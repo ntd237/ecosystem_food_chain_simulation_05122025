@@ -189,8 +189,4 @@ ecosystem:
 
 MIT License - Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
 
-## 📞 Liên hệ
 
-- **Author**: ntd237
-- **Email**: ntd237.work@gmail.com
-- **GitHub**: https://github.com/ntd237
