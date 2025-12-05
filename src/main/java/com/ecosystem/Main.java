@@ -27,12 +27,12 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("===========================================");
-        System.out.println("  🌍 Ecosystem Food Chain Simulation");
+        System.out.println("   Ecosystem Food Chain Simulation");
         System.out.println("===========================================");
-        System.out.println("Mô phỏng chuỗi thức ăn trong hệ sinh thái");
-        System.out.println("Producer → Herbivore → Carnivore");
+        System.out.println("Mo phong chuoi thuc an trong he sinh thai");
+        System.out.println("Producer -> Herbivore -> Carnivore");
         System.out.println("-------------------------------------------");
-        System.out.println("Đang khởi động giao diện...");
+        System.out.println("Dang khoi dong giao dien...");
 
         // Khởi động JavaFX Application
         Application.launch(MainApp.class, args);
