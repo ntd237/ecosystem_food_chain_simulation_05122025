@@ -218,46 +218,46 @@ public class Ecosystem {
 
     /**
      * Dọn dẹp sinh vật đã chết.
+     * 
+     * Fix: Sử dụng removeIf() thay vì iterator.remove() vì CopyOnWriteArrayList
+     * không hỗ trợ thao tác remove trên iterator của nó (ném
+     * UnsupportedOperationException).
+     * Phương thức removeIf() được hỗ trợ và hoạt động đúng với
+     * CopyOnWriteArrayList.
      */
     private void cleanupDeadOrganisms() {
-        // Loại bỏ Producer chết
-        Iterator<Producer> producerIterator = producers.iterator();
-        while (producerIterator.hasNext()) {
-            Producer p = producerIterator.next();
+        // Loại bỏ Producer chết - dọn cell trước, rồi remove khỏi list
+        for (Producer p : producers) {
             if (!p.isAlive()) {
                 Cell cell = grid[p.getX()][p.getY()];
                 if (cell.getOccupant() == p) {
                     cell.clear();
                 }
-                producerIterator.remove();
             }
         }
+        producers.removeIf(p -> !p.isAlive());
 
         // Loại bỏ Herbivore chết
-        Iterator<Herbivore> herbivoreIterator = herbivores.iterator();
-        while (herbivoreIterator.hasNext()) {
-            Herbivore h = herbivoreIterator.next();
+        for (Herbivore h : herbivores) {
             if (!h.isAlive()) {
                 Cell cell = grid[h.getX()][h.getY()];
                 if (cell.getOccupant() == h) {
                     cell.clear();
                 }
-                herbivoreIterator.remove();
             }
         }
+        herbivores.removeIf(h -> !h.isAlive());
 
         // Loại bỏ Carnivore chết
-        Iterator<Carnivore> carnivoreIterator = carnivores.iterator();
-        while (carnivoreIterator.hasNext()) {
-            Carnivore c = carnivoreIterator.next();
+        for (Carnivore c : carnivores) {
             if (!c.isAlive()) {
                 Cell cell = grid[c.getX()][c.getY()];
                 if (cell.getOccupant() == c) {
                     cell.clear();
                 }
-                carnivoreIterator.remove();
             }
         }
+        carnivores.removeIf(c -> !c.isAlive());
     }
 
     /**
