@@ -94,15 +94,15 @@ public class MainApp extends Application implements SimulationListener {
         chooseLabel.setTextFill(Color.WHITE);
 
         Button balancedBtn = createMenuButton("⚖️ Hệ sinh thái cân bằng",
-                "Producer: 100 | Herbivore: 30 | Carnivore: 10");
+                getScenarioDescription("balanced"));
         balancedBtn.setOnAction(e -> startSimulation("balanced"));
 
         Button overpopBtn = createMenuButton("📈 Quá tải Herbivore",
-                "Producer: 50 | Herbivore: 80 | Carnivore: 5");
+                getScenarioDescription("overpopulation"));
         overpopBtn.setOnAction(e -> startSimulation("overpopulation"));
 
         Button extinctBtn = createMenuButton("💀 Nguy cơ tuyệt chủng",
-                "Producer: 30 | Herbivore: 15 | Carnivore: 25");
+                getScenarioDescription("extinction"));
         extinctBtn.setOnAction(e -> startSimulation("extinction"));
 
         scenarioBox.getChildren().addAll(chooseLabel, balancedBtn, overpopBtn, extinctBtn);
@@ -279,6 +279,14 @@ public class MainApp extends Application implements SimulationListener {
         button.setPrefHeight(60);
         button.setFont(Font.font("Arial", 14));
         return button;
+    }
+
+    private String getScenarioDescription(String scenarioName) {
+        EcosystemConfig config = ConfigLoader.loadScenario(scenarioName);
+        return String.format("Producer: %d | Herbivore: %d | Carnivore: %d",
+                config.getInitialProducers(),
+                config.getInitialHerbivores(),
+                config.getInitialCarnivores());
     }
 
     // === Button Styles ===
