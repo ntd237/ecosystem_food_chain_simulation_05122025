@@ -184,9 +184,3 @@ ecosystem:
    - 🔄 Reset: Khởi động lại
    - Thanh tốc độ: Điều chỉnh nhanh/chậm
 4. **Quan sát**: Theo dõi grid và biểu đồ dân số
-
-## 📄 License
-
-MIT License - Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
-
-
