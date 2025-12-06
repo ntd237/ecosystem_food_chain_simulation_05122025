@@ -225,7 +225,7 @@ public class MainApp extends Application implements SimulationListener {
         Label speedLabel = new Label("Tốc độ:");
         speedLabel.setTextFill(Color.WHITE);
 
-        speedSlider = new Slider(50, 500, 200);
+        speedSlider = new Slider(200, 1000, 450);
         speedSlider.setShowTickLabels(true);
         speedSlider.setShowTickMarks(true);
         speedSlider.setPrefWidth(150);
