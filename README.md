@@ -124,38 +124,6 @@ mvn clean package
 java -jar target/ecosystem-simulation-1.0.0.jar
 ```
 
-## 🧪 Chạy Tests
-
-```bash
-# Chạy tất cả tests
-mvn test
-
-# Chạy với coverage report
-mvn test jacoco:report
-```
-
-## ⚙️ Cấu hình
-
-Mọi tham số đều có thể điều chỉnh trong file `src/main/resources/config/ecosystem.yaml`:
-
-```yaml
-ecosystem:
-  grid:
-    width: 50
-    height: 30
-  
-  energy:
-    transfer_rate: 0.10  # 10% rule
-    producer_photosynthesis: 5.0
-    herbivore_hunger_rate: 2.0
-    carnivore_hunger_rate: 3.0
-  
-  reproduction:
-    producer_threshold: 80.0
-    herbivore_threshold: 100.0
-    carnivore_threshold: 150.0
-```
-
 ## 📊 Nguyên lý hoạt động
 
 ### Chuyển đổi năng lượng (10% Rule)
