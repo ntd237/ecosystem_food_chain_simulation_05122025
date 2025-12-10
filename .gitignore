@@ -34,3 +34,4 @@ Thumbs.db
 # Java
 hs_err_pid*
 replay_pid*
+test/
